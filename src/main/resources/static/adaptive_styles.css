@@ -1,0 +1,70 @@
+
+  /* Визначаємо медіазапити для різних розмірів екрану */
+  @media (max-width: 767px) {
+    /* CSS-правила для екранів менших за 768px */
+    .container {
+      width: 100%;
+    }
+  
+    .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+      width: 100%;
+      float: none;
+    }
+  
+    .text_left, .text_right {
+      padding: 10px;
+    }
+  
+    .banner {
+      padding: 50px 0;
+    }
+  
+    #proj {
+      padding-top: 50px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* CSS-правила для екранів від 768px до 1023px */
+    .container {
+      width: 100%;
+    }
+  
+    .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+      width: 100%;
+      float: none;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    /* CSS-правила для екранів більших за 1023px */
+    .container {
+      width: 750px;
+    }
+  
+    .col-sm-2 {
+      width: 16.66666667%;
+    }
+  
+    .col-sm-5 {
+      width: 41.66666667%;
+    }
+  
+    .col-sm-12 {
+      width: 100%;
+    }
+  }
+
+  
+@media screen and (max-width: 768px) {
+  #sliders {
+    margin-top: 600px; /* Змінив значення margin-top на 800px для мобільних пристроїв */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #sliders {
+    margin-top: 300px; /* Змінив значення margin-top на 500px для менших мобільних пристроїв */
+  }
+}
+

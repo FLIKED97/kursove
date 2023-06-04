@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Оформлення замовлення</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <link rel="stylesheet" href="style-form.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Оформлення замовлення</h1>
+    <form id="myForm" action="/form/submit" method="post">
+      <div class="form-group">
+        <label for="FirstName">Ім'я:</label>
+        <input type="text" id="FirstName" name="FirstName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="SurName">Прізвище:</label>
+        <input type="text" id="SurName" name="SurName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="Patronymic">По батькові:</label>
+        <input type="text" id="Patronymic" name="Patronymic" required>
+      </div>
+
+      <div class="form-group">
+        <label for="Phone">Номер телефону:</label>
+        <input type="tel" id="Phone" name="Phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="area">Площа об'єкту (м²):</label>
+        <input type="text" id="area" name="area" required>
+      </div>
+
+      <div class="form-group">
+        <label for="workType">Тип роботи на об'єкті:</label>
+        <select id="workType" name="workType" required>
+          <option value="">Оберіть тип роботи</option>
+          <option value="Робота з водоймами">Робота з водоймами</option>
+          <option value="Будівництво">Будівництво</option>
+          <option value="Дизайн">Дизайн</option>
+        </select>
+      </div>
+
+      <button type="submit">Відправити</button>
+      <button type="button" onclick="history.back()">Назад</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Retrieve form values
+      var name = document.getElementById('name').value;
+      var surname = document.getElementById('surname').value;
+      var patronymic = document.getElementById('patronymic').value;
+      var phone = document.getElementById('phone').value;
+      var area = document.getElementById('area').value;
+      var workType = document.getElementById('workType').value;
+
+      // Output form values to console
+      console.log('Ім\'я:', name);
+      console.log('Прізвище:', surname);
+      console.log('По батькові:', patronymic);
+      console.log('Номер телефону:', phone);
+      console.log('Площа об\'єкту:', area);
+      console.log('Тип роботи на об\'єкті:', workType);
+
+      // Clear form inputs
+      document.getElementById('myForm').reset();
+    });
+    document.getElementById("myForm").addEventListener("submit", function () {
+        alert("Форма була успішно відправлена!");
+        window.location.href = "/success.html";
+    });
+  </script>
+</body>
+</html>
